@@ -1,0 +1,39 @@
+.mainOpen {
+  width: 230px;
+  min-width: 230px;
+   position: static;
+  /*display: -webkit-box;
+  display: -webkit-flex;
+  display: flex; */
+  /* -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); */
+  transition: width, 0.5s ease-out;
+   background-color: #fff;
+  height: 100vh;
+  overflow-y: scroll;
+  padding-top: 90px;
+ }
+ .mainClose {
+  width:0px;
+  min-width: 0px;
+  /* display: none; */
+   /* position: static;  */
+  /* display: -webkit-box;
+  display: -webkit-flex; */
+  /* display: flex;  */
+  /* -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); */
+  transition: width 0.5s ease-out;
+  /* background-color: #fff;
+  height: 100vh;
+  overflow-y: scroll;
+  padding-top: 90px; */
+ }
+ .mainClose * {
+  display: none;
+}
+ .navTitle{
+  color: black;
+  font-weight: 500px;
+  text-decoration: none;
+ }
