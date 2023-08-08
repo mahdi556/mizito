@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
+const nextConfig = {
+  // output: 'export',
+  // experimental: {
+  //   images: { unoptimaized: true },
+  // },
+};
 
-module.exports = nextConfig
-
- 
+module.exports = nextConfig;

@@ -1,0 +1,105 @@
+.wrapper{
+  padding-top: 15px;
+  background-color: #f2f2f2;
+  width: 90%;
+}
+.main {
+  width: 95%;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+    0 2px 1px -1px rgba(0, 0, 0, 0.12);
+    padding: 10px 5px;
+}
+.headerLeft{
+  display: flex;
+  align-items: center;
+  
+  border-bottom: solid 1px #ccc;
+}
+.rightCol{
+  min-width: 500px;
+}
+.leftCol{
+
+}
+.avatarName{
+  border-radius: 50%;
+  background-color: rgb(179, 56, 56);
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  text-align: center;
+  padding:8px;
+  font-weight: 300;
+
+}
+.userTitle{
+  font-size: 14px;
+  font-weight: bold;
+}
+.lastSeen{
+  font-size: 12px;
+  color: #999;
+  /* font-weight: 300; */
+}
+.chatWrapper{
+  height: 60vh;
+  overflow-y: scroll;
+  padding-top: 20px;
+}
+.bubbleLeft {
+  background-color: #e5e5ea;
+  border-radius: 10px;
+  color: black;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  max-width: 300px;
+  padding: 10px;
+  position: relative;
+}
+
+.bubbleLeft:before {
+  border-top: 10px solid transparent;
+  border-right: 10px solid #e5e5ea;
+  border-bottom: 10px solid transparent;
+  content: "";
+  height: 0;
+  left: -10px;
+  position: absolute;
+  top: 12px;
+  width: 0;
+}
+
+.bubbleLeft p {
+  margin: 0;
+}
+.bubbleRight {
+  background-color: rgb(208, 236, 239);
+  border-radius: 10px;
+  color: rgba(0,0,0,0.87);
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  max-width: 300px;
+  padding: 10px;
+  position: relative;
+}
+
+.bubbleRight:after {
+  border-top: 10px solid transparent;
+  border-left: 10px solid #e5e5ea;
+  border-bottom: 10px solid transparent;
+  content: "";
+  height: 0;
+  right: -10px;
+  position: absolute;
+  top: 12px;
+  width: 0;
+}
+
+.bubbleRight p {
+  margin: 0;
+}

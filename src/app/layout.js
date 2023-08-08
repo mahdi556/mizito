@@ -5,9 +5,15 @@ import Script from "next/script";
 import Header from "../components/Header";
 import { ToggleProvider } from "@/context/ToggleContext";
 import SideBar from "@/components/sidebar/SideBare";
+import Head from "next/head";
 export default function RootLayout({ children }) {
   return (
     <html lang="fa" dir="rtl">
+       <Head>
+          <link rel="manifest" href="/manifest.json" />
+          <link rel="apple-touch-icon" href="/icon.png"></link>
+          <meta name="theme-color" content="#fff" />
+        </Head>
       <body
         style={{
           paddingTop: 65,

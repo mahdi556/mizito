@@ -1,0 +1,7 @@
+{
+  "name": "mizito",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "custom"
+}
