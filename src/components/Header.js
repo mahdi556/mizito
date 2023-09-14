@@ -28,7 +28,7 @@ const Header = () => {
             fontSize: 24,
           }}
         >
-          میزیتو
+          میک اَپ
         </a>
         <button
           className="navbar-toggler"
@@ -51,7 +51,7 @@ const Header = () => {
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
-                رویال عسل حقیقت
+                دکتر مهدی حقیقتی
               </a>
               <ul className="dropdown-menu">
                 <li>
@@ -74,21 +74,9 @@ const Header = () => {
                 </li>
               </ul>
             </li>
-            <li className="nav-item">
-              <a className="nav-link disabled">Disabled</a>
-            </li>
+           
           </ul>
-          <form className="d-flex" role="search">
-            <input
-              className="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
+          
         </div>
       </div>
     </nav>

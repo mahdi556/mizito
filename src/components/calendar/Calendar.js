@@ -1,10 +1,14 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import jMoment from "moment-jalaali";
 import styles from "@/components/calendar/Calendar.module.css";
 import Image from "next/image";
-
-const IndexPage = () => {
+import { useRouter } from "next/navigation";
+import QueContext from "@/context/QueContext ";
+const Calendar = () => {
+  const router = useRouter();
+  const { setActiveDate, office, monthlyReserves, getmonthlyReserves } =
+    useContext(QueContext);
   // Set initial start and end dates
   const startDate = jMoment("1402/01/10", "jYYYY/jM/jD");
   const endDate = jMoment("1403/01/20", "jYYYY/jM/jD");
@@ -39,17 +43,21 @@ const IndexPage = () => {
   const [currentDate, setCurrentDate] = useState(startDate);
   useEffect(() => {
     setCurrentDate(jMoment());
+    setActiveDate(jMoment());
   }, []);
+  useEffect(() => {}, [monthlyReserves]);
   // Function to display previous month's dates
   const handlePrevMonth = () => {
     const newDate = currentDate.clone().subtract(1, "month");
     setCurrentDate(newDate);
+    getmonthlyReserves(currentDate.jMonth());
   };
 
   // Function to display next month's dates
   const handleNextMonth = () => {
     const newDate = currentDate.clone().add(1, "month");
     setCurrentDate(newDate);
+    getmonthlyReserves(currentDate.clone().add(1, "month").format("jM"));
   };
   // Calculate dates to display based on current date
   let startOfMonth = currentDate.clone().startOf("jMonth");
@@ -64,7 +72,6 @@ const IndexPage = () => {
   // Create an array of arrays to store the dates by week
   const persianDatesByWeek = [];
   let currentDay = startOfMonth.clone();
-  console.log(currentDay);
   let currentWeek = [];
   while (currentDay.isBefore(endOfMonth) || currentDay.isSame(endOfMonth)) {
     currentWeek.push(currentDay.clone().subtract(1, "day"));
@@ -125,20 +132,46 @@ const IndexPage = () => {
                   return (
                     <td
                       className={
-                        jMoment().format("jYYYY/jM/jD") ===
+                       `pointer ${jMoment().format("jYYYY/jM/jD") ===
                         date.format("jYYYY/jM/jD")
                           ? styles.today
-                          :  date.isAfter(jMoment())
+                          : date.isAfter(jMoment())
                           ? styles.tdaf
                           : currentDate.jMonth() == date.jMonth()
                           ? styles.td
-                          : styles.tdlm
+                          : styles.tdlm}`
                       }
+                      onClick={() => {
+                        setActiveDate(date);
+                        router.push(`reserves/${office.id}`);
+                      }}
                     >
                       {jMoment().format("jYYYY/jM/jD") ===
                       date.format("jYYYY/jM/jD")
                         ? ` امروز: ${date.format(`jD ${persianMonth}`)}  `
                         : date.format(`jD ${persianMonth}`)}
+                      {monthlyReserves &&
+                        monthlyReserves.map(
+                          (item) =>
+                            item.date == date.format("jYYYY-jMM-jDD") && (
+                              <>
+                              <div className=" d-flex flex-column px-1">
+
+                                {item.types.wait && (
+                                  <span className={`d-flex my-1 badge text-bg-primary ${styles.reserveBadge}`}>
+                                    در انتظار پذیرش: {item.types.wait} نفر
+                                  </span>
+                                )}
+                                {item.types.done && (
+                                  <span className={`d-flex my-1 badge text-bg-success ${styles.reserveBadge}`}>
+                                  پذیرش شده: {item.types.done} نفر
+                                  </span>
+                                )}
+                              </div>
+                              </>
+                            )
+                        )}
+                      {/* {date.format("jYYYY-jMM-jDD")} */}
                     </td>
                   );
                 })}
@@ -151,4 +184,4 @@ const IndexPage = () => {
   );
 };
 
-export default IndexPage;
+export default Calendar;

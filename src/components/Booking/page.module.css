@@ -1,0 +1,96 @@
+.sec1 {
+  width: 85%;
+  border: #11999e solid 2px;
+  border-radius: 20px;
+}
+.txt1 {
+  color: #11999e;
+  font-weight: bold;
+  font-family: ShabnamFD;
+}
+.sec2 {
+  width: 95%;
+  border-radius: 20px;
+  border: #11999e solid 2px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.txt2 {
+  color: #11999e;
+  font-family: ShabnamFD;
+  font-weight: bold;
+}
+.timeSell {
+  /* From https://css.glass */
+  background: #67e6dc;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  /* border: 1px solid #7f8c8d; */
+  color: #fff;
+  font-family: ShabnamFD;
+  font-weight: 500;
+  min-height: 60px;
+  font-size: 18px;
+}
+.timeNotrefer {
+  background-color: red;
+  opacity: 0.25;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-family: ShabnamFD;
+  font-weight: 500;
+  min-height: 60px;
+}
+.timefree {
+  background: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  /* box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); */
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;      backdrop-filter: blur(0.2px);
+  -webkit-backdrop-filter: blur(0.2px);
+  border: 1px solid #eee;
+
+  /* background-color: #11999e; */
+  /* border-radius: 10px; */
+  text-align: center;
+  color: #11999e;
+  font-family: ShabnamFD;
+  font-weight: bold;
+  min-height: 60px;
+  font-size: 18px;
+}
+.timeDelay {
+  background-color: #abc517;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-family: ShabnamFD;
+  font-weight: 500;
+  min-height: 60px;
+}
+.timeDone {
+  background-color: #3ae374;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  font-family: ShabnamFD;
+  font-weight: 500;
+  min-height: 60px;
+  font-size: 18px;
+}
+.queWrapper {
+  background: rgb(255,255,255);
+
+  /* background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(73,185,193,1) 25%);  */
+    border-radius: 15px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+ }
+.queShift{
+  background-color: #00cec9;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 10px;
+}

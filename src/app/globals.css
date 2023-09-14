@@ -49,12 +49,15 @@
   font-weight: 500;
 }
 body {
-  font-family: "shabnam";
+  font-family: "shabnamFD";
   height: 100vh;
   overflow-y: hidden;
- }
+}
 .nav-bg {
-  background-color: #db4c3f;
+  background-color: #11999e;
+}
+.numfont {
+  font-family: shabnamFD;
 }
 .f15 {
   font-size: 25px;
@@ -108,4 +111,102 @@ body {
   align-items: center;
   justify-content: center;
   border: 1px solid #ccc;
+}
+
+.stamp {
+  transform: rotate(12deg);
+  color: #555;
+  font-size: 0.8em;
+  font-weight: 700;
+  border: 0.25rem solid #555;
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  font-family: "shabnam";
+  -webkit-mask-image: url("../../public/images/grunge.png");
+  -webkit-mask-size: 944px 604px;
+  mix-blend-mode: multiply;
+}
+
+.is-approved {
+  color: #0a9928;
+  border: 0.5rem solid #0a9928;
+  -webkit-mask-position: 13rem 6rem;
+  transform: rotate(-14deg);
+  border-radius: 0;
+}
+.is-nope {
+  color: #d23;
+  border: 0.5rem double #d23;
+  transform: rotate(3deg);
+  -webkit-mask-position: 2rem 3rem;
+  font-size: 1rem;
+}
+.Toastify__toast-body{
+  font-family: shabnamFD !important;
+  direction: rtl;
+}
+
+
+.loader {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  border: 3px solid;
+  border-color: #fff #fff transparent transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+.loader::after,
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  border: 3px solid;
+  border-color: transparent transparent #ff3d00 #ff3d00;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  animation: rotationBack 0.5s linear infinite;
+  transform-origin: center center;
+}
+.loader::before {
+  width: 32px;
+  height: 32px;
+  border-color: #fff #fff transparent transparent;
+  animation: rotation 1.5s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotationBack {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+.led-green {
+  margin: 0 auto;
+  width: 18px;
+  height: 18px;
+  background-color: #ABFF00;
+  border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 -1px 7px 1px, inset #304701 0 -1px 9px, #89FF00 0 2px 12px;
 }
